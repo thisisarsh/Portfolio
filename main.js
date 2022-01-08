@@ -51,3 +51,9 @@ function animateLetterIn(nw, i){
 
 changeWord();
 setInterval(changeWord, 4000);
+
+let rotating = document.getElementById('rotating');
+rotating.addEventListener('wheel', () => {
+    rotating.style.display = 'none';
+    //document.getElementById("main-content").style.display = "initial";
+})
