@@ -55,5 +55,5 @@ setInterval(changeWord, 4000);
 let rotating = document.getElementById('rotating');
 rotating.addEventListener('wheel', () => {
     rotating.style.display = 'none';
-    //document.getElementById("main-content").style.display = "initial";
+    document.getElementById("main-content").style.display = "flex";
 })
