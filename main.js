@@ -53,7 +53,11 @@ changeWord();
 setInterval(changeWord, 4000);
 
 let rotating = document.getElementById('rotating');
-rotating.addEventListener('wheel', () => {
-    rotating.style.display = 'none';
+rotating.addEventListener('wheel', e => {
+    let delta = ((e.deltaY || -e.wheelDelta || e.detail) >> 10) || 1;
+    if(delta > 0){
+        rotating.style.display = 'none';
     document.getElementById("main-content").style.display = "flex";
+    }
+    
 })

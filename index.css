@@ -23,33 +23,37 @@ body {
     display: flex;
     width: 100%;
     height: 100vh;
-    background-color: skyblue;
-    align-items: center;
+
     justify-content: center;
-    font-size: 2em;
-    min-height: 0;
-    transition: min-height 0.15s ease-in;
+    font-family: 'Space Mono', monospace;
+    font-size: 4em;
+    gap: 45px;
+}
+
+#rotating p{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding-top: 45vh;
+
 }
 
 #main-content{
     display: none;
     height: 100vh;
-    background-color: springgreen;
+    
     padding: 0 var(--spacing-3);
     width: 900px;
     margin: 0 auto;
     flex-direction: column;
 }
-
-p {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0;
-  }
   
 .word {
     position: absolute;
-    width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    text-align: center;
     opacity: 0;
 }
   
@@ -75,7 +79,37 @@ p {
 }
 
 #logo {
-    margin: 0;
+
+    font: 700 4em/1 "Oswald", sans-serif;
+    letter-spacing: 0;
+    padding: .25em 0 .325em;
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 80px rgba(255,255,255,.5);
+
+/* Clip Background Image */
+
+    background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+/* Animate Background Image */
+
+    -webkit-text-fill-color: transparent;
+    animation: aitf 80s linear infinite;
+
+/* Activate hardware acceleration for smoother animations */
+
+    transform: translate3d(0,0,0);
+    backface-visibility: hidden;
+
+}
+
+/* Animate Background Image */
+
+@keyframes aitf {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 h2{
@@ -90,6 +124,7 @@ body {
     max-width: 100%;
     margin: 0 auto;
     display: flex;
+    background-image: linear-gradient(62deg, #8EC5FC, #E0C3FC);
     
 }
 
@@ -117,3 +152,4 @@ a {
     text-decoration: none;
     font-weight: 600;
 }
+
