@@ -2,10 +2,15 @@ html {
     scroll-behavior: smooth;
 }
 
-html,
 body {
-  height: auto;
-  color: var(--font-color);
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding:0 ;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    background-image: linear-gradient(62deg, #8EC5FC, #E0C3FC);
+    
 }
 
 :root {
@@ -15,19 +20,24 @@ body {
     --spacing-4: 24px;
   
     --border-radius: 12px;
-  
+
     --font-color: #323232;
 }
 
 #rotating{
     display: flex;
+    position: absolute;
     width: 100%;
     height: 100vh;
-
-    justify-content: center;
     font-family: 'Space Mono', monospace;
     font-size: 4em;
     gap: 45px;
+    background-image: linear-gradient(62deg, #8EC5FC, #E0C3FC);
+    opacity: 1;
+}
+
+#rotating:hover #rotating{
+    background-image: linear-gradient(62deg, #FFF, #000);
 }
 
 #rotating p{
@@ -38,16 +48,10 @@ body {
 
 }
 
-#main-content{
-    display: none;
-    height: 100vh;
-    
-    padding: 0 var(--spacing-3);
-    width: 900px;
-    margin: 0 auto;
-    flex-direction: column;
+#emptyP{
+    width: 20%;
 }
-  
+
 .word {
     position: absolute;
     margin-left: auto;
@@ -77,6 +81,30 @@ body {
     transform: rotateX(0deg);
     transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
+.fadeOut {
+    animation : fade 0.5s 1  cubic-bezier(0.75, 0.5, 1, 1) forwards;
+}
+
+@keyframes fade {
+    100%{
+        padding-top: 60vh;
+        opacity: 0;
+    }
+}
+
+#main-content{
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    background-image: linear-gradient(62deg, #8EC5FC, #E0C3FC);
+    opacity: 0;
+}
+  
 
 #logo {
 
@@ -115,17 +143,6 @@ body {
 h2{
     margin: 0;
     margin-bottom: var(--spacing-2);
-}
-
-body {
-    font-family: "Open Sans", sans-serif;
-    margin: 0;
-    padding:0 ;
-    max-width: 100%;
-    margin: 0 auto;
-    display: flex;
-    background-image: linear-gradient(62deg, #8EC5FC, #E0C3FC);
-    
 }
 
 nav {

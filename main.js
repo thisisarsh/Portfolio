@@ -53,11 +53,27 @@ changeWord();
 setInterval(changeWord, 4000);
 
 let rotating = document.getElementById('rotating');
+// rotating.addEventListener('wheel', e => {
+//     let delta = ((e.deltaY || -e.wheelDelta || e.detail) >> 10) || 1;
+//     if(delta > 0){
+//         rotating.style.display = 'none';
+//     document.getElementById("main-content").style.display = "flex";
+//     }
+// });
+
+function fadeOut() {
+    document.getElementById('hello').className = 'fadeOut';
+    let array = document.getElementsByClassName('word'); 
+    console.log(array);
+
+    for(let i = 0; i< array.length; i++){
+        array[i].className = 'fadeOut';
+    }
+}
+
 rotating.addEventListener('wheel', e => {
     let delta = ((e.deltaY || -e.wheelDelta || e.detail) >> 10) || 1;
     if(delta > 0){
-        rotating.style.display = 'none';
-    document.getElementById("main-content").style.display = "flex";
+        fadeOut();
     }
-    
-})
+});
