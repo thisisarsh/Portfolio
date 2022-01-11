@@ -77,3 +77,17 @@ rotating.addEventListener('wheel', e => {
         fadeOut();
     }
 });
+
+var menuBtn = document.querySelector('.menu-btn');
+var nav = document.querySelector('.nav-2');
+var lineOne = document.querySelector('.nav-2 .menu-btn .line--1');
+var lineTwo = document.querySelector('.nav-2 .menu-btn .line--2');
+var lineThree = document.querySelector('.nav-2 .menu-btn .line--3');
+var link = document.querySelector('.nav-2 .nav-links');
+menuBtn.addEventListener('click', () => {
+    nav.classList.toggle('nav-open');
+    lineOne.classList.toggle('line-cross');
+    lineTwo.classList.toggle('line-fade-out');
+    lineThree.classList.toggle('line-cross');
+    link.classList.toggle('fade-in');
+})
