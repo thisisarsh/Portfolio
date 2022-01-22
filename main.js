@@ -62,13 +62,8 @@ let rotating = document.getElementById('rotating');
 // });
 
 function fadeOut() {
-    document.getElementById('hello').className = 'fadeOut';
-    let array = document.getElementsByClassName('word'); 
-    console.log(array);
-
-    for(let i = 0; i< array.length; i++){
-        array[i].className = 'fadeOut';
-    }
+    document.getElementById('rotating').className = 'fade-out';
+    document.getElementById("main-content").className = 'fade-in';
 }
 
 rotating.addEventListener('wheel', e => {
@@ -80,11 +75,11 @@ rotating.addEventListener('wheel', e => {
 
 var menuBtn = document.querySelector('.menu-btn');
 
-var nav = document.querySelector('.nav-2');
+var nav = document.querySelector('.navbar');
 var lineOne = document.querySelector('.menu-btn .line--1');
 var lineTwo = document.querySelector('.menu-btn .line--2');
 var lineThree = document.querySelector('.menu-btn .line--3');
-var link = document.querySelector('.nav-2 .nav-links');
+var link = document.querySelector('.navigation-items');
 
 menuBtn.addEventListener('click', () => {
     nav.classList.toggle('nav-open');
